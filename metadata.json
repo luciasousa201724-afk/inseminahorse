@@ -1,0 +1,6 @@
+{
+  "name": "InseminaHorse",
+  "description": "Centro Veterinário e Reprodução Equina em Cuiabá, MT - Soluções completas com inseminação em cavalos, exames de alta precisão e atendimento especializado.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
