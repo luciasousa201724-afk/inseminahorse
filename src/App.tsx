@@ -25,6 +25,16 @@ import {
   MessageSquare
 } from 'lucide-react';
 
+// Born-expert generated image assets
+import logoUrl from './assets/images/logo_1780969765272.png';
+import mareAndFoalUrl from './assets/images/mare_and_foal_1780969781224.png';
+import sickFoalUrl from './assets/images/sick_foal_treatment_1780969797008.png';
+import ultrasoundUrl from './assets/images/equine_ultrasound_1780969814617.png';
+import brandBadgeUrl from './assets/images/brand_badge_logo_1780970234409.png';
+import heroBackgroundPalominoUrl from './assets/images/hero_background_palomino_1780970856597.png';
+import successResultBannerUrl from './assets/images/success_result_banner_1780971313272.png';
+import inseminahorseGreenLogoUrl from './assets/images/inseminahorse_green_logo_1780971337193.png';
+
 // Type definitions
 interface Service {
   nome: string;
@@ -32,6 +42,7 @@ interface Service {
   descricao: string;
   detalhes: string[];
   duracaoEstimada: string;
+  imagem?: string;
 }
 
 interface Testimonial {
@@ -84,7 +95,8 @@ export default function App() {
         "Inseminação com sêmen fresco, resfriado ou congelado de alta qualidade",
         "Indução de ovulação e acompanhamento pós-cobertura meticuloso",
         "Diagnóstico precoce de gestação a partir de 11 dias"
-      ]
+      ],
+      imagem: mareAndFoalUrl
     },
     {
       nome: "Atendimento de Emergência",
@@ -96,7 +108,8 @@ export default function App() {
         "Avaliação de distocias (partos difíceis) e retenção de placenta",
         "Protocolos de estabilização respiratória e metabólica",
         "Acesso rápido a veterinários especialistas de plantão em MT"
-      ]
+      ],
+      imagem: sickFoalUrl
     },
     {
       nome: "Exames Veterinários",
@@ -108,7 +121,8 @@ export default function App() {
         "Avaliação laboratorial andrológica preliminar",
         "Análise microscópica de sêmen e testes de viabilidade",
         "Laudos técnicos detalhados para transferência de embriões"
-      ]
+      ],
+      imagem: ultrasoundUrl
     }
   ];
 
@@ -293,15 +307,16 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           
           {/* Logo / Nome */}
-          <a href="#hero" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-[#4da768] rounded-lg flex items-center justify-center shadow-md shadow-emerald-800/10 group-hover:scale-105 transition-transform">
-              <svg viewBox="0 0 24 24" className="w-6 h-6 fill-white">
-                <path d="M19,7C17.89,7 17,7.89 17,9C17,10.11 17.89,11 19,11C20.11,11 21,10.11 21,9C21,7.89 20.11,7 19,7M12,2L11,3L12,4L11,5L12,6L11,7L12,8L11,9L12,10L11,11L12,12L11,13L12,14L11,15L12,16L11,17L12,18L11,19L12,20L13,21H20V19.43C20.61,19.07 21,18.41 21,17.67V12.33C21,11.59 20.61,10.93 20,10.57V9C20,6.79 18.21,5 16,5H12V2M15,7H16C17.1,7 18,7.9 18,9V10.17L18.41,10.59C18.77,10.95 19,11.46 19,12V17.17C19,17.71 18.77,18.22 18.41,18.58L18,19V20H14V19L13.59,18.58C13.23,18.22 13,17.71 13,17.17V12C13,11.46 13.23,10.95 13.59,10.59L14,10.17V9C14,7.9 14.9,7 16,7Z" />
-              </svg>
-            </div>
+          <a href="#hero" className="flex items-center gap-3.5 group">
+            <img 
+              src={inseminahorseGreenLogoUrl} 
+              alt="InseminaHorse Logo" 
+              className="w-16 h-16 object-cover rounded-xl shadow-md border border-gray-100 group-hover:scale-105 transition-transform duration-350 bg-white" 
+              referrerPolicy="no-referrer"
+            />
             <div>
-              <span className="text-xl font-bold tracking-tight text-[#4da768] block">InseminaHorse</span>
-              <span className="text-[10px] font-semibold text-[#808080] uppercase tracking-wider block -mt-1">Reprodução Equina</span>
+              <span className="text-2xl font-black tracking-tight text-[#4da768] block">InseminaHorse</span>
+              <span className="text-[11px] font-bold text-[#808080] uppercase tracking-wider block -mt-1.5">Reprodução Equina</span>
             </div>
           </a>
 
@@ -422,48 +437,76 @@ export default function App() {
       </header>
 
       {/* 1. Hero Section (#hero) */}
-      <section id="hero" className="bg-gradient-to-b from-white to-[#F9FAFB] border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section id="hero" className="bg-gradient-to-b from-white to-[#F4FBF7] border-b border-gray-100 relative overflow-hidden py-12 lg:py-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Lado Esquerdo - Conteúdo Principal */}
-          <div className="lg:col-span-7 flex flex-col justify-center text-left" id="hero_content">
-            <span className="inline-flex self-start py-1 px-3 mb-5 text-[10px] font-bold tracking-[0.2em] text-[#4da768] bg-[#4da76810] rounded-full uppercase">
-              Referência em Mato Grosso
-            </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] text-[#111827] mb-6">
-              Inseminação Equina em Cuiabá: <span className="text-[#4da768] block sm:inline">Excelência em Reprodução</span>
-            </h1>
-            <p className="text-base sm:text-lg text-[#808080] leading-relaxed mb-8 max-w-xl">
-              Elevamos o potencial genético do seu plantel com tecnologia de ponta e suporte especializado em Mato Grosso. Oferecemos segurança e os melhores índices de prenhez para criadores que não abrem mão da qualidade.
-            </p>
-            
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-              <button
-                onClick={() => handleWAClick("Olá! Quero conhecer mais sobre a Inseminação Equina em Cuiabá e saber os detalhes de suporte veterinário.")}
-                className="flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold rounded-xl shadow-lg shadow-green-500/10 hover:scale-[1.02] active:scale-95 transition-all text-base cursor-pointer"
-              >
-                <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.007 0-3.971-.51-5.713-1.472l-6.28 1.69zm6.214-4.083l.345.205c1.428.848 3.084 1.296 4.781 1.296 4.964 0 9.011-4.048 9.011-9.011 0-2.404-.936-4.664-2.634-6.363-1.699-1.7-3.96-2.636-6.364-2.636-4.963 0-9.011 4.047-9.011 9.011 0 1.776.52 3.513 1.503 5.025l.225.346-1.003 3.666 3.748-.978z" />
-                </svg>
-                Falar no WhatsApp
-              </button>
-              <a
-                href="#servicos"
-                className="px-8 py-4 border-2 border-[#4da768] text-[#4da768] font-bold rounded-xl hover:bg-gray-50 text-center transition-all text-base flex items-center justify-center gap-2"
-              >
-                Conhecer nossos serviços
-              </a>
+          {/* Lado Esquerdo - Conteúdo Principal com a Foto de Fundo mostrando os Dois Cavalos */}
+          <div className="lg:col-span-7 flex flex-col justify-center text-left relative overflow-hidden rounded-3xl border border-gray-100 shadow-xl p-6 sm:p-10 lg:p-12 min-h-[500px]" id="hero_content">
+            {/* Imagem de Fundo Interna do Bloco de Texto */}
+            <div className="absolute inset-0 z-0">
+              <img 
+                src={heroBackgroundPalominoUrl} 
+                alt="Égua palomina e potro da InseminaHorse" 
+                className="w-full h-full object-cover object-right sm:object-center select-none pointer-events-none"
+                referrerPolicy="no-referrer"
+              />
+              {/* Degradê que deixa os cavalos visíveis à direita/centro e garante legibilidade do texto à esquerda */}
+              <div className="absolute inset-0 bg-white/80 sm:bg-white/75 lg:bg-gradient-to-r lg:from-white/95 lg:via-white/80 lg:to-white/10" />
             </div>
-            
-            <p className="mt-4 text-xs font-semibold text-[#808080] italic">
-              * Atendimento técnico especializado para equinos e bovinos.
-            </p>
+
+            {/* Conteúdo com Z-Index para ficar acima do plano de fundo */}
+            <div className="relative z-10">
+              <span className="inline-flex self-start py-1 px-3 mb-5 text-[10px] font-extrabold tracking-[0.2em] text-[#347d4b] bg-white/95 backdrop-blur-xs border border-emerald-100 shadow-sm rounded-full uppercase">
+                Referência em Mato Grosso
+              </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.15] text-[#111827] mb-6">
+                Inseminação Equina em Cuiabá: <span className="text-[#3a8b54] block sm:inline">Excelência em Reprodução</span>
+              </h1>
+              <p className="text-sm sm:text-base text-gray-800 font-medium leading-relaxed mb-8 max-w-xl bg-white/60 backdrop-blur-xs p-3 rounded-xl border border-white/40">
+                Elevamos o potencial genético do seu plantel com tecnologia de ponta e suporte especializado em Mato Grosso. Oferecemos segurança e os melhores índices de prenhez para criadores que não abrem mão da qualidade.
+              </p>
+              
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+                <button
+                  onClick={() => handleWAClick("Olá! Quero conhecer mais sobre a Inseminação Equina em Cuiabá e saber os detalhes de suporte veterinário.")}
+                  className="flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold rounded-xl shadow-lg shadow-green-500/10 hover:scale-[1.02] active:scale-95 transition-all text-base cursor-pointer"
+                >
+                  <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.007 0-3.971-.51-5.713-1.472l-6.28 1.69zm6.214-4.083l.345.205c1.428.848 3.084 1.296 4.781 1.296 4.964 0 9.011-4.048 9.011-9.011 0-2.404-.936-4.664-2.634-6.363-1.699-1.7-3.96-2.636-6.364-2.636-4.963 0-9.011 4.047-9.011 9.011 0 1.776.52 3.513 1.503 5.025l.225.346-1.003 3.666 3.748-.978z" />
+                  </svg>
+                  Falar no WhatsApp
+                </button>
+                <a
+                  href="#servicos"
+                  className="px-8 py-4 border-2 border-[#4da768] bg-white/95 hover:bg-emerald-50 text-[#4da768] font-bold rounded-xl text-center shadow-xs transition-all text-base flex items-center justify-center gap-2"
+                >
+                  Conhecer nossos serviços
+                </a>
+              </div>
+              
+              <p className="mt-5 text-xs font-extrabold text-[#347d4b] bg-white/90 shadow-sm border border-emerald-100/60 inline-block px-3 py-1.5 rounded-lg">
+                * Atendimento técnico especializado para equinos e bovinos.
+              </p>
+            </div>
           </div>
 
           {/* Lado Direito - Ilustração Física / Painel de Especialidades Estilo Premium */}
           <div className="lg:col-span-5 flex flex-col gap-6" id="hero_secondary_card">
             
+            {/* Foto de Destaque Símbolo da Reprodução com Égua e Potro */}
+            <div className="relative overflow-hidden rounded-2xl border border-gray-100 shadow-md bg-white group select-none">
+              <img 
+                src={successResultBannerUrl} 
+                alt="Caso de Sucesso - Égua Paint Horse e Potro saudável" 
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm shadow border border-emerald-50 px-2.5 py-1 rounded-full text-[10px] font-extrabold text-emerald-700 uppercase tracking-wider">
+                Resultado de Sucesso
+              </div>
+            </div>
+
             {/* Bloco de Destaques Rápidos de Especialidade */}
             <div className="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-6">
@@ -672,8 +715,19 @@ export default function App() {
                 key={servico.slug}
                 className="bg-white rounded-2xl border border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-lg transition-all flex flex-col overflow-hidden"
               >
-                {/* Visual Accent Bar */}
-                <div className="h-2 bg-[#4da768]" />
+                {/* Imagem do Serviço */}
+                {servico.imagem && (
+                  <div className="h-48 overflow-hidden relative group">
+                    <img 
+                      src={servico.imagem} 
+                      alt={servico.nome} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-1 bg-[#4da768]" />
+                  </div>
+                )}
+                {!servico.imagem && <div className="h-2 bg-[#4da768]" />}
                 
                 <div className="p-8 flex-1 flex flex-col">
                   <div className="flex items-center justify-between mb-4">
@@ -1400,15 +1454,16 @@ export default function App() {
           <div className="flex flex-col md:flex-row justify-between items-center sm:items-start md:items-center gap-8 border-b border-white/5 pb-8">
             
             {/* Esquerdo: Identificação Reduzida */}
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-white/10 rounded flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
-                  <path d="M19,7C17.89,7 17,7.89 17,9C17,10.11 17.89,11 19,11C20.11,11 21,10.11 21,9C21,7.89 20.11,7 19,7M12,2L11,3L12,4L11,5L12,6L11,7L12,8L11,9L12,10L11,11L12,12L11,13L12,14L11,15L12,16L11,17L12,18L11,19L12,20L13,21H20V19.43C20.61,19.07 21,18.41 21,17.67V12.33C21,11.59 20.61,10.93 20,10.57V9C20,6.79 18.21,5 16,5H12V2M15,7H16C17.1,7 18,7.9 18,9V10.17L18.41,10.59C18.77,10.95 19,11.46 19,12V17.17C19,17.71 18.77,18.22 18.41,18.58L18,19V20H14V19L13.59,18.58C13.23,18.22 13,17.71 13,17.17V12C13,11.46 13.23,10.95 13.59,10.59L14,10.17V9C14,7.9 14.9,7 16,7Z" />
-                </svg>
-              </div>
+            <div className="flex items-center gap-3.5">
+              <img 
+                src={inseminahorseGreenLogoUrl} 
+                alt="InseminaHorse Logo Grande" 
+                className="w-14 h-14 object-cover bg-white rounded-xl shadow-sm" 
+                referrerPolicy="no-referrer"
+              />
               <div>
-                <span className="text-sm font-bold text-white block">InseminaHorse</span>
-                <span className="text-[9px] text-[#808080] uppercase block -mt-1">Reprodução de Equinos em Cuiabá, MT</span>
+                <span className="text-base font-extrabold text-white block">InseminaHorse</span>
+                <span className="text-[10px] text-[#808080] uppercase font-bold tracking-wider block -mt-0.5">Reprodução de Equinos em Cuiabá, MT</span>
               </div>
             </div>
 
