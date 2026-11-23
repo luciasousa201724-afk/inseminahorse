@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+
 import { 
   Phone, 
   MapPin, 
@@ -81,7 +82,7 @@ export default function App() {
 
   // Constants
   const WHATSAPP_NUMBER = "5565999999999";
-  const PHONE_DISPLAY = "(65) 99999-9999";
+  const PHONE_DISPLAY = "(65) 99695-9592";
   const CLINIC_ADDRESS = "Av. João Eugênio Gonçalves Pinheiro, 410 - Areão, Cuiabá - MT";
 
   const servicos: Service[] = [
@@ -1414,7 +1415,7 @@ export default function App() {
               <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.891-11.891 11.891-2.007 0-3.971-.51-5.713-1.472l-6.28 1.69zm6.214-4.083l.345.205c1.428.848 3.084 1.296 4.781 1.296 4.964 0 9.011-4.048 9.011-9.011 0-2.404-.936-4.664-2.634-6.363-1.699-1.7-3.96-2.636-6.364-2.636-4.963 0-9.011 4.047-9.011 9.011 0 1.776.52 3.513 1.503 5.025l.225.346-1.003 3.666 3.748-.978z" />
               </svg>
-              Falar no WhatsApp (65 99999-9999)
+              Falar no WhatsApp (65 99695-9592)
             </button>
             
             <a
@@ -1441,7 +1442,7 @@ export default function App() {
             </div>
             <div>
               <p className="text-[10px] uppercase font-bold text-emerald-300 tracking-[0.2em] mb-1">Telefone Principal</p>
-              <p className="text-xs text-emerald-100">WhatsApp Oficial: (65) 99999-9999</p>
+              <p className="text-xs text-emerald-100">WhatsApp Oficial: (65) 99695-9592</p>
             </div>
           </div>
 
@@ -1507,7 +1508,7 @@ export default function App() {
 
           <div className="pt-8 flex flex-col md:flex-row justify-between items-center sm:items-start md:items-center gap-4 text-[11px] text-gray-500">
             <div className="space-y-1">
-              <p>InseminaHorse | Telefone/WhatsApp: 65 99999-9999 | Endereço: Av. João Eugênio Gonçalves Pinheiro, 410, Areão - Cuiabá (MT)</p>
+              <p>InseminaHorse | Telefone/WhatsApp: 65 99695-9592 | Endereço: Av. João Eugênio Gonçalves Pinheiro, 410, Areão - Cuiabá (MT)</p>
               <p>Horário de Atendimento: Inseminação com Hora Marcada | Atendimento de Emergência: 24 horas</p>
             </div>
             <div className="space-y-1 md:text-right">
