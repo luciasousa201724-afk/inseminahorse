@@ -1512,9 +1512,22 @@ export default function App() {
               <p>Horário de Atendimento: Inseminação com Hora Marcada | Atendimento de Emergência: 24 horas</p>
             </div>
             <div className="space-y-1 md:text-right">
-              <p>© 2026 InseminaHorse. Todos os direitos reservados. CNPJ sob consulta.</p>
-              <p>Desenvolvido por <a href="https://ofsdigital.com.br" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white underline">OFS Digital</a></p>
-            </div>
+            <p>© 2026 InseminaHorse MT. Todos os direitos reservados.</p>
+<p>
+  <a
+    href="https://wa.me/5565996959592"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:underline font-medium"
+  >
+    Desenvolvido por ML Marketing Digital | (65) 99695-9592
+  </a>
+</p>
+<p className="italic opacity-80">
+  Projeto demonstrativo desenvolvido pela ML Marketing Digital para fins de portfólio.
+</p> 
+              
+            
           </div>
 
         </div>
