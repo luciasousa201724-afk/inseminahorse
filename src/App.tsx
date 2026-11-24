@@ -1525,7 +1525,8 @@ export default function App() {
 </p>
 <p className="italic opacity-80">
   Projeto demonstrativo desenvolvido pela ML Marketing Digital para fins de portfólio.
-</p> 
+</p>
+              </div>
               
             
           </div>
